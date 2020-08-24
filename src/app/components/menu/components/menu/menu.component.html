@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar color="light">
+      
+
+    <ion-buttons slot="primary">
+        <ion-button color="secondary" (click)="openFirst()">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+     </ion-buttons>
+      <ion-toolbar color="light">
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>JugateUNO</ion-title>
+      </ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-menu side="end" menuId="primerMenu" contentId="main">
+    <ion-header>
+      <ion-toolbar color="light">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+      
+        
+        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple primary list group item</a>
+     
+      </div>
+    </ion-content>
+  </ion-menu>
+
+
+  <ion-router-outlet id="main"></ion-router-outlet>

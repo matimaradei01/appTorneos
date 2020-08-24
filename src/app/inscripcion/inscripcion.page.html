@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    Inscripcion
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+
+  <div class="shadow-sm p-3 bg-white rounded">
+  
+  <ion-text  color="secondary">
+    <div class="shadow-none p-3 bg-light rounded">Asegurate de que esten bien los datos</div>
+  </ion-text>
+
+  <div class="mx-auto">
+  <ion-item style="width: 90%;">
+    <ion-label position="floating">ID de tu PS4</ion-label>
+    <ion-input [(ngModel)]="idPs4"></ion-input>
+  </ion-item>
+  
+
+  <ion-item style="padding-top: 15px; padding-bottom: 45px; width: 90%;">
+    <ion-label>Elije tu equipo</ion-label>
+    <ion-select [(ngModel)]="equipoElegido" value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
+</div>
+
+<ion-content *ngIf="encontrado">
+  <div class="alert alert-danger" role="alert">
+Ya hay un usuario con el ID ingresado
+  </div>
+</ion-content>
+
+
+  </div>
+
+  <ion-button [disabled]="habilitado" color="secondary" expand="block" (click)="registrarUsuario()">Registrate</ion-button>
+  
+  <table id="customers">
+    <tr>
+      <th><ion-icon style="padding-right: 15px" name="people-outline"></ion-icon>Jugador</th>
+      <th><ion-icon style="padding-right: 15px" name="football-outline"></ion-icon>Equipo</th>
+    </tr>
+    <tr *ngFor="let j of equiposAnotados">
+      <td>{{j.idPs4}}</td>
+      <td>{{j.equipo}}</td>
+      <br>
+    </tr>
+  </table>
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">
+      <a href="/torneo">Ir al torneo</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+

@@ -1,0 +1,24 @@
+<ion-card *ngFor = "let t of torneos">
+  <ion-card-header>
+    <ion-card-title class="ion-text-center">{{t.nombreTorneo}}</ion-card-title>
+  </ion-card-header>
+  <ion-img [src]="t.img"></ion-img>
+  <ion-card-content class="ion-padding">
+    {{t.descripcionTorneo}}
+    <ion-card-subtitle class="participantes">Participantes Inscriptos <ion-badge class="badge" color="secondary">{{t.participantesInscriptos}}</ion-badge></ion-card-subtitle>
+  </ion-card-content>
+  <ion-row style ="display: flex" class="ion-justify-content-around">
+  <ion-chip>
+    <ion-icon name="medal-outline"></ion-icon>  
+    <ion-label>Inscripcion <ion-test>{{t.precio}}</ion-test></ion-label>
+  </ion-chip>
+  <ion-chip>
+    <ion-icon name="gift-outline"></ion-icon>
+    <ion-label>Premio <ion-test>{{t.premio}}</ion-test></ion-label>
+  </ion-chip>
+</ion-row>
+  
+  <ion-button color="secondary" expand="full">PARTICIPAR</ion-button>
+  <ion-button  color="primary" expand="full" (click)="presentAlertPrompt()">ENTRAR</ion-button>
+
+</ion-card>
